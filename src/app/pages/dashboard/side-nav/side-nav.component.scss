@@ -1,0 +1,141 @@
+.nav {
+    .search-box {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin: 15px 10px;
+        input {
+            width: 300px;
+            border-radius: 20px;
+            border: none;
+            padding: 5px 10px 5px 40px;
+            height: 35px;
+            box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.05);
+            &:hover, &:focus {
+                outline: none;
+            }
+        }
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            opacity: .6;
+        }
+    }
+    .select-theme{
+        display: flex;
+        align-items: center;
+        font-size: 1.3rem;
+        .mat-icon{
+            font-size: 1.9rem;
+            height: 1.9rem;
+            width: 1.9rem;
+            margin-right: 1rem;
+        }
+        span{
+            opacity: 0.65;
+        }
+    }
+    .navText{
+        transition: .5s ease-in-out all;
+    }
+    .navLink{
+        width: 100%;
+        opacity: 0.8;
+        font-weight: 400;
+        font-size: 1.5rem;
+        text-align: left;
+        padding: 1.3rem 1.5rem;
+        line-height: 1;
+        .mat-icon{
+            margin-right: 8px;
+            transition: .5s ease-in-out all;
+        }
+    }
+    .mat-expansion-panel{
+        border-radius: 0;
+        box-shadow: 0 0 transparent;
+        border-bottom-width: 1px;
+        background: transparent;
+        .mat-expansion-panel-header{
+            transition: .5s ease-in-out all;
+            padding: 1.3rem 1.5rem;
+            height: auto;
+            &.mat-expanded{
+                height: auto;
+            }
+            .mat-expansion-panel-header-title{
+                opacity: .8;
+                display: flex;
+                align-items: center;
+                white-space: nowrap;
+                .mat-icon{
+                    margin-right: 10px;
+                    transition: .5s ease-in-out all;
+                }
+            }
+        }
+        .mat-nav-list .mat-list-item {
+            cursor: pointer;
+            outline: none;
+            font-size: 13px;
+            height: unset;
+            line-height: 2.5;
+            .mat-icon{
+                font-size: 18px;
+                height: 18px;
+                width: 18px;
+                margin-right: 4px;
+                opacity: .8;
+            }
+            ::ng-deep{
+                .mat-list-item-content{
+                    opacity: .85;
+                }
+            }
+        }
+    }
+    ::ng-deep {
+        .mat-expansion-panel-spacing {
+            margin: 0;
+        }
+        .mat-list-base{
+            padding-top: 0;
+        }
+        .mat-list-text{
+            opacity: .6;
+            font-size: .9em;
+            // padding: 0 10px;
+        }
+        .mat-expansion-panel-body{
+            // display: none;
+            padding: 0 0;
+        }
+    }
+    &.collapse{
+        .navText{
+            opacity: 0;
+        }
+        .navLink{
+            .mat-icon{
+                margin-right: 20px;
+            }
+        }
+        .mat-expansion-panel{
+            .mat-expansion-panel-header{
+                padding-right: 0;
+                .mat-expansion-panel-header-title{
+                    .mat-icon{
+                        margin-right: 20px;
+                    }
+                }
+            }
+        }
+        ::ng-deep{
+            .mat-expansion-indicator{
+                opacity: 0;
+            }
+        }
+    }
+}
+
+

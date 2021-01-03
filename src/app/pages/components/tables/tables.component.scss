@@ -1,0 +1,45 @@
+.main-wrapper {
+    padding: 10px;
+    table {
+        .active {
+            background: rgb(66 133 244 / 22%);
+            color: #4285f4;
+            pointer-events: none;
+        }
+        .inactive {
+            background: rgb(244 74 85 / 21%);
+            color: #f44a55;
+            pointer-events: none;
+        }
+    }
+    .paginator {
+        width: 100%;
+    }
+
+    .compStyle {
+        display: block;
+        margin-bottom: 10px;
+    }
+    /* Structure */
+    table {
+        width: 100%;
+    }
+
+    .mat-form-field {
+        font-size: 14px;
+        min-width: 250px;
+    }
+    mat-divider {
+        margin: 40px 0px;
+    }
+}
+
+
+.mat-elevation-z8 {
+    overflow: auto;
+}
+.mat-header-cell, .mat-cell {
+    padding: 0 10px;
+    white-space: nowrap;
+}
+

@@ -1,0 +1,271 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+@import "../src/assets/css/theme.scss";
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+@import "~@angular/cdk/overlay-prebuilt.css";
+// Plus imports for other components in your app.
+
+// Custom Mixins of Partials
+@import "assets/css/utility";
+@import "assets/css/typography";
+@import "assets/css/grid";
+@import "assets/css/cards";
+@import "assets/css/charts";
+@import "assets/css/padding";
+@import "assets/css/margin";
+@import "assets/css/snackbar";
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$theme-primary: mat-palette($mat-blue, A700);
+$theme-accent: mat-palette($mat-yellow, A400);
+
+// The warn palette is optional (defaults to red).
+$theme-warn: mat-palette($mat-red, A400);
+
+// For Dialog Starts
+$theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+@include angular-material-theme($theme);
+@include component-theme($theme);
+@include utility-mixin($theme);
+@include typography-mixin();
+@include grid-mixin();
+@include cards-mixin();
+@include charts-mixin();
+@include padding-mixin();
+@include margin-mixin();
+@include snackbar-mixin();
+// For Dialog Ends
+
+.dark-theme {
+    $theme: mat-dark-theme($theme-primary, $theme-accent, $theme-warn);
+    @include angular-material-theme($theme);
+    @include component-theme($theme);
+    @include utility-mixin($theme);
+    ngx-skeleton-loader .loader {
+        border-radius: 5px;
+        background-color: #323232;
+        border: 1px solid #323232;
+        animation-duration: 2s;
+    }
+}
+
+.light-theme {
+    $theme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
+    @include angular-material-theme($theme);
+    @include component-theme($theme);
+    @include utility-mixin($theme);
+    ngx-skeleton-loader .loader {
+        border-radius: 5px;
+        animation-duration: 2s;
+    }
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+    font-size: 10px;
+}
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.font-montserrat {
+    font-family: "Montserrat", sans-serif;
+}
+
+.mat-drawer-container{
+    min-height: 100vh;
+}
+
+/*
+::Table Of Content
+
+1.) @FontFace Style
+2.) Global TypoGraphy
+3.) Global Links, Utilities & Buttons
+4.) Global Sprite Icon Style
+5.) Global Utilities
+6.) Grid System Starts
+7.) Site Wide Content
+8.) Global Form Elements
+9.) Animations
+10.) Page global style
+11.) Responsive style
+-------------------------------------*/
+
+/*
+1.) @FontFace Style
+-------------------------------------*/
+
+// .material-icons {
+//     font-size: 21px;
+// }
+
+
+
+/*
+7.) Site Wide Content
+-------------------------------------*/
+
+#wrapper {
+    position: relative;
+}
+
+.container {
+    width: 100%;
+    max-width: 1048px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.absolute-content {
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.align-center {
+    text-align: center;
+}
+/*
+8.) Global Form Elements
+-------------------------------------*/
+
+.mat-option strong {
+    font-weight: 500;
+}
+
+/*
+9.) Animations
+-------------------------------------*/
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-webkit-keyframes rotatecircle {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@keyframes rotatecircle {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+/*
+10.) Page global style
+-------------------------------------*/
+
+.page-header {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 80px;
+    /*margin-bottom: 44px;*/
+    .mat-button {
+        position: absolute;
+        left: -25px;
+    }
+}
+
+/*
+11.) Responsive style
+-------------------------------------*/
+
+@media (max-width: 1024px) {
+    .page-header {
+        margin-bottom: 58px;
+    }
+    .page-header .mat-button {
+        left: 0;
+    }
+}
+@media (max-width: 950px) {
+}
+@media (max-width: 876px) {
+}
+@media (max-width: 767px) {
+    .mat-typography {
+        h1,
+        h2 {
+        }
+        h3 {
+        }
+        h4 {
+        }
+        p {
+        }
+    }
+    .dshow {
+        display: block !important;
+    }
+    .dhide {
+        display: none !important;
+    }
+    .container {
+        padding: 0 20px;
+    }
+    
+}

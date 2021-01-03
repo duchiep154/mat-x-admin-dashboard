@@ -1,0 +1,169 @@
+<div class="main-wrapper">
+
+    <header>
+        <h1>Dashboard
+            <small>Admin Dashboard Page</small>
+        </h1>
+    </header>
+
+    <div class="content">
+
+        <div class="row">
+            <div class="col-3 md-6">
+                <mat-card class="card bg-app no-shadow">
+                    <div class="card-header row">
+                        <h2>
+                            <small>Total User</small>
+                            40,689
+                        </h2>
+                        <div class="icon-right red">
+                            <mat-icon>people</mat-icon>
+                        </div>
+                    </div>
+                    <div class="status-line">
+                        <span class="itext color-green">
+                            <mat-icon>trending_up</mat-icon>
+                            10.32%
+                        </span>
+                        <span class="text-muted">Since last week</span>
+                    </div>
+                </mat-card>
+            </div>
+
+            <div class="col-3 md-6">
+                <mat-card class="card bg-app no-shadow">
+                    <div class="card-header row">
+                        <h2>
+                            <small>Total Order</small>
+                            10,689
+                        </h2>
+                        <div class="icon-right blue">
+                            <mat-icon>people</mat-icon>
+                        </div>
+                    </div>
+                    <div class="status-line">
+                        <span class="itext color-red">
+                            <mat-icon>trending_down</mat-icon>
+                            10.32%
+                        </span>
+                        <span class="text-muted">Since last week</span>
+                    </div>
+                </mat-card>
+            </div>
+
+            <div class="col-3 md-6">
+                <mat-card class="card bg-app no-shadow">
+                    <div class="card-header row">
+                        <h2>
+                            <small>Total Sales</small>
+                            80,689
+                        </h2>
+                        <div class="icon-right green">
+                            <mat-icon>people</mat-icon>
+                        </div>
+                    </div>
+                    <div class="status-line">
+                        <span class="itext color-green">
+                            <mat-icon>trending_down</mat-icon>
+                            10.32%
+                        </span>
+                        <span class="text-muted">Since last week</span>
+                    </div>
+                </mat-card>
+            </div>
+            
+            <div class="col-3 md-6">
+                <mat-card class="card bg-app no-shadow">
+                    <div class="card-header row">
+                        <h2>
+                            <small>Total Pending</small>
+                            40,689
+                        </h2>
+                        <div class="icon-right orange">
+                            <mat-icon>people</mat-icon>
+                        </div>
+                    </div>
+                    <div class="status-line">
+                        <span class="itext color-green">
+                            <mat-icon>trending_up</mat-icon>
+                            10.32%
+                        </span>
+                        <span class="text-muted">Since last week</span>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-4 md-6">
+                <mat-card class="card col bg-app no-shadow">
+                    <div class="card-header">
+                        <h2>
+                            <small>Revenue</small>
+                            10,689
+                        </h2>
+                    </div>
+                    <mat-card-content class="mt-auto">
+                        <app-line-chart class="compStyle" [chartInputData]="revenuData"></app-line-chart>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="col-4 md-6">
+                <mat-card class="card col bg-app no-shadow">
+                    <div class="card-header">
+                        <h2>
+                            <small>Shared Order</small>
+                            80,689
+                        </h2>
+                    </div>
+                    <mat-card-content>
+                        <app-doughnut-chart class="compStyle" [chartInputData]="orderSharedData"></app-doughnut-chart>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div class="col-4 md-6">
+                <mat-card class="card col bg-app no-shadow pro-card">
+                    <i class="bg-primary"></i>
+                    <i class="bg-accent"></i>
+                    <img src="/assets/images/pro.svg" alt="">
+                    <span class="txt">
+                        Upgrade to <strong>PRO</strong> for <br>
+                        more resources
+                    </span>
+                    
+                    <button mat-flat-button color="primary">Upgrade Now</button>
+                </mat-card>
+            </div>
+
+            <div class="col-4 md-6">
+                <mat-card class="card col bg-app no-shadow">
+                    <div class="card-header">
+                        <h2>
+                            <small>Total Orders</small>
+                            40,689
+                        </h2>
+                    </div>
+                    <mat-card-content>
+                        <app-bar-chart class="compStyle" [chartInputData]="totalOrdersData"></app-bar-chart>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+
+            <div class="col-8 md-12">
+                <mat-card class="card col bg-app no-shadow">
+                    <div class="card-header">
+                        <h2>
+                            <!-- <small>Total Pending</small> -->
+                            Products
+                        </h2>
+                    </div>
+                    <mat-card-content class="mt-auto">
+                        <app-area-chart class="compStyle" [chartData]="trafficData"></app-area-chart>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+
+    </div>
+
+</div><!-- main-wrapper ends -->

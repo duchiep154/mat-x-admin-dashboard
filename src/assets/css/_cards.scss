@@ -1,0 +1,191 @@
+@mixin cards-mixin() {
+    .card, .mat-card.card{
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        &.mh-auto{
+            min-height: auto;
+        }
+        .card-header{
+            &.row{
+                margin: 0;
+                .icon-right {
+                    align-self: baseline;
+                    margin-left: auto;
+                    width: 35px;
+                    height: 35px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 5px;
+                    &.blue{
+                        background: rgba(41, 98, 255, 0.2);
+                        color: #2962ff;
+                    }
+                    &.red{
+                        background: rgba(255, 0, 0, 0.2);
+                        color: red;
+                    }
+                    &.green{
+                        background: rgba(3, 188, 109, 0.2);
+                        color: #03bc6d;
+                    }
+                    &.orange{
+                        background: rgba(255, 212, 0, 0.2);
+                        color: #ffd400;
+                    }
+                }
+            }
+        }
+        .mat-list,
+        .mat-nav-list,
+        .mat-selection-list{
+            margin: 0 -16px;
+        }
+        h2{
+            font-size: 2.6rem;
+            font-weight: 500;
+            margin-bottom: 18px;
+            small{
+                display: block;
+                font-size: .6em;
+                opacity: .5;
+                font-weight: 400;
+                margin-bottom: 6px;
+            }
+        }
+        .status-line{
+            font-size: 1.3rem;
+            display: flex;
+            .itext{
+                display: flex;
+                align-items: center;
+                .mat-icon{
+                    width: 2rem;
+                    height: 2rem;
+                    font-size: 2rem;
+                    margin-right: .2rem;
+                }
+            }
+            .text-muted{
+                opacity: .5;
+                margin-left: auto;
+            }
+        }
+    }
+
+    .pro-card{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        img{
+            width: 85px;
+            margin: 0 auto;
+            display: block;
+        }
+        .txt{
+            font-size: 2rem;
+            line-height: 1.2;
+            margin: 2.0rem 0 5.2rem;
+            font-weight: 300;
+            display: block;
+        }
+        button{
+            font-size: 1.7rem;
+            font-weight: 400;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        i{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            opacity: .1;
+            position: absolute;
+            left: -70px;
+            top: 10px;
+            &.bg-accent{
+                top: auto;
+                bottom: 40px;
+                left: auto;
+                right: -80px;
+                opacity: .08;
+            }
+        }
+    }
+
+    @media(max-width: 767px){
+        .card, .mat-card.card{
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            &.mh-auto{
+                min-height: auto;
+            }
+            .card-header{
+                &.row{
+                    margin: 0;
+                    flex-direction: row;
+                    .icon-right {
+                        align-self: baseline;
+                        margin-left: auto;
+                        width: 35px;
+                        height: 35px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: 5px;
+                        &.blue{
+                            background: rgba(41, 98, 255, 0.2);
+                            color: #2962ff;
+                        }
+                        &.red{
+                            background: rgba(255, 0, 0, 0.2);
+                            color: red;
+                        }
+                        &.green{
+                            background: rgba(3, 188, 109, 0.2);
+                            color: #03bc6d;
+                        }
+                        &.orange{
+                            background: rgba(255, 212, 0, 0.2);
+                            color: #ffd400;
+                        }
+                    }
+                }
+            }
+            h2{
+                font-size: 2.6rem;
+                font-weight: 500;
+                margin-bottom: 18px;
+                small{
+                    display: block;
+                    font-size: .6em;
+                    opacity: .5;
+                    font-weight: 400;
+                    margin-bottom: 6px;
+                }
+            }
+            .status-line{
+                font-size: 1.3rem;
+                display: flex;
+                .itext{
+                    display: flex;
+                    align-items: center;
+                    .mat-icon{
+                        width: 2rem;
+                        height: 2rem;
+                        font-size: 2rem;
+                        margin-right: .2rem;
+                    }
+                }
+                .text-muted{
+                    opacity: .5;
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+
+} // @mixin cards-mixin($theme) Ends

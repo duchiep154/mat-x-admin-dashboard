@@ -1,0 +1,17 @@
+<app-header></app-header>
+<div class="dashboard-wrapper" [class.sideNavClose]="sideNavClose">
+    <div class="row no-gutters">
+        <div class="overlay" *ngIf="mobileMode" [class.show]="!sideNavClose"
+        (click)="closeNav()"></div>
+        <div class="left panel bg-app shadow custom-scrollbar">
+            <app-side-nav></app-side-nav>
+        </div>
+        
+        
+        <div class="right panel custom-scrollbar">
+            <router-outlet></router-outlet>
+            <app-footer></app-footer>
+        </div> 
+    </div>
+
+</div><!-- dashboard-wrapper ends -->

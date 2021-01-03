@@ -1,0 +1,20 @@
+.notification-wrapper{
+    padding: 10px;
+    .button-group{
+        button{
+            min-width: 95px;
+            margin: 0 10px 10px 0;
+        }
+    }
+    .snack-bar-fields{
+        mat-form-field {
+            width: 100%;
+            ::ng-deep{
+                .mat-form-field-wrapper{
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }
+}
+

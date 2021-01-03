@@ -1,0 +1,70 @@
+footer {
+    margin-top: 30px;
+    .footer-container {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .left-container {
+            .link {
+                font-size: 12px;
+                font-weight: 400;
+            }
+        }
+        .right-container {
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            .mat-icon {
+                font-size: 1.7rem;
+                height: 1.7rem;
+                width: 1.7rem;
+                margin: 0 0.6rem;
+                &.heart{
+                    font-size: 1.5rem;
+                    height: 1.5rem;
+                    width: 1.5rem;
+                    opacity: .5;
+                }
+            }
+            span {
+                opacity: 0.8;
+            }
+        }
+        .logo {
+            .red {
+                color: red;
+                font-weight: 600;
+                opacity: 1;
+                margin-right: .2rem;
+            }
+            .foreground {
+                font-weight: 500;
+                opacity: 1;
+            }
+        }
+    }
+
+    @media (max-width: 950px) {
+        .footer-container {
+            .left-container {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .right-container {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    @media (max-width: 767px) {
+    }
+}

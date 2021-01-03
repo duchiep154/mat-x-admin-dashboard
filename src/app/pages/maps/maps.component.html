@@ -1,0 +1,57 @@
+<div class="main-wrapper">
+
+    <header>
+        <h1>Maps
+            <small>With agm map dependency</small>
+        </h1>
+    </header>
+
+    <div class="content">
+        <div class="row">
+            <div class="col-12">
+                <mat-card class="card bg-app no-shadow">
+                    <div class="card-header row">
+                        <p>
+                            Satellite Map
+                        </p>
+                    </div>
+                    <agm-map [latitude]="location.latitude" [longitude]="location.longitude" [zoom]="5" class="agm-map"
+                        [scrollwheel]="false" [mapTypeId]="'satellite'">
+                        <agm-marker [latitude]="location.marker.latitude" [longitude]="location.marker.longitude"
+                            [label]="location.marker.label"></agm-marker>
+                    </agm-map>
+                </mat-card>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <mat-card class="card bg-app no-shadow">
+                    <div class="card-header row">
+                        <p>
+                            Hybrid Map
+                        </p>
+                    </div>
+                    <agm-map [latitude]="location.latitude" [longitude]="location.longitude" [zoom]="location.zoom"
+                        class="agm-map" [scrollwheel]="false" [mapTypeId]="'hybrid'">
+                        <agm-marker [latitude]="location.marker.latitude" [longitude]="location.marker.longitude"
+                            [label]="location.marker.label"></agm-marker>
+                    </agm-map>
+                </mat-card>
+            </div>
+            <div class="col-6">
+                <mat-card class="card bg-app no-shadow">
+                    <div class="card-header row">
+                        <p>
+                            Ragular Map
+                        </p>
+                    </div>
+                    <agm-map [latitude]="location.latitude" [longitude]="location.longitude" [zoom]="5" class="agm-map"
+                        [scrollwheel]="false">
+                        <agm-marker [latitude]="location.marker.latitude" [longitude]="location.marker.longitude"
+                            [label]="location.marker.label"></agm-marker>
+                    </agm-map>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

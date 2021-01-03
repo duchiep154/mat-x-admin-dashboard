@@ -1,0 +1,185 @@
+<div class="main-wrapper">
+
+    <header>
+        <h1>Tables
+            <small>Material Tables</small>
+        </h1>
+    </header>
+
+    <div class="row">
+        <div class="col-12">
+            <p>#Table with product details with actions</p>
+            <div class="mat-elevation-z8 no-shadow">
+                <table mat-table class="table bg-app" [dataSource]="dataSource">
+
+                    <!-- # -12umn -->
+                    <ng-container matColumnDef="#">
+                        <th mat-header-cell *matHeaderCellDef> # </th>
+                        <td mat-cell *matCellDef="let element; let i = index;">{{i+1}}</td>
+                    </ng-container>
+
+
+                    <!-- Image Column -->
+                    <ng-container matColumnDef="itemImage">
+                        <th mat-header-cell *matHeaderCellDef> Item Image </th>
+                        <td mat-cell *matCellDef="let element" style="padding: 2px 0px;">
+                            <img [src]="element.itemImage" width="50" height="50"
+                                style="border-radius: 50%; padding: 2px;" class="primary-border">
+                        </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef> Name. </th>
+                        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                    </ng-container>
+
+                    <!-- categoryName Column -->
+                    <ng-container matColumnDef="categoryName">
+                        <th mat-header-cell *matHeaderCellDef> Category Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.categoryName}} </td>
+                    </ng-container>
+
+                    <!-- Price Column -->
+                    <ng-container matColumnDef="price">
+                        <th mat-header-cell *matHeaderCellDef> price </th>
+                        <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+                    </ng-container>
+
+                    <!-- Created Date Column -->
+                    <ng-container matColumnDef="createdDate">
+                        <th mat-header-cell *matHeaderCellDef> Created Date
+                        </th>
+                        <td mat-cell *matCellDef="let element">
+                            {{element.createdDate}}
+
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="active">
+                        <th mat-header-cell *matHeaderCellDef> Status </th>
+                        <td mat-cell *matCellDef="let element">
+                            <!--  -->
+                            <mat-chip-list>
+                                <mat-chip *ngIf="element.active" class="active" selected>Active</mat-chip>
+                                <mat-chip *ngIf="!element.active" class="inactive" selected>Inactive</mat-chip>
+                            </mat-chip-list>
+
+                        </td>
+                    </ng-container>
+                    <!-- Status Column -->
+                    <ng-container matColumnDef="status">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header matSortDirection="desc"> </th>
+                        <td mat-cell *matCellDef="let element">
+                            <ng-container>
+
+                                <section class="example-section">
+                                    <mat-slide-toggle color="accent" [checked]="element.active"
+                                        (toggleChange)="element.active = !element.active">
+                                    </mat-slide-toggle>
+                                </section>
+
+                            </ng-container>
+                        </td>
+                    </ng-container>
+                    <!-- Active Column -->
+
+
+
+                    <!-- Action Column -->
+                    <ng-container matColumnDef="action">
+                        <th mat-header-cell *matHeaderCellDef> </th>
+                        <td mat-cell *matCellDef="let element">
+                            <!-- {{element.uid}} -->
+
+                            <button mat-icon-button [matMenuTriggerFor]="menu">
+                                <mat-icon>more_vert</mat-icon>
+                            </button>
+
+                            <mat-menu #menu="matMenu">
+                                <button mat-menu-item *ngIf="!element.active">
+                                    <span>Active</span>
+                                </button>
+                                <button mat-menu-item *ngIf="element.active">
+                                    <span>Inactive</span>
+                                </button>
+                                <button mat-menu-item>
+                                    <!-- <mat-icon class="material-icons" color="warn">close</mat-icon> -->
+                                    Delete
+                                </button>
+                            </mat-menu>
+
+                        </td>
+                    </ng-container>
+
+                    <!-- Delete Column -->
+                    <ng-container matColumnDef="">
+                        <th mat-header-cell *matHeaderCellDef> Delete </th>
+                        <td mat-cell *matCellDef="let element">
+                            <!-- {{element.customerId}} -->
+                            <a mat-icon-button class="delete" color="warn">
+                                <mat-icon class="material-icons">close</mat-icon>
+                            </a>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+            <mat-paginator class="bg-app " [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
+            </mat-paginator>
+
+
+        </div>
+
+
+    </div>
+    <mat-divider></mat-divider>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <p>#Table with search with shadow</p>
+            <mat-form-field>
+                <mat-label>Search</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Oxygen" #input>
+            </mat-form-field>
+            <div class="mat-elevation-z8">
+                <table mat-table class="table bg-app auto-overflow" [dataSource]="dataSource2">
+
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="position">
+                        <th mat-header-cell *matHeaderCellDef> No. </th>
+                        <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="name">
+                        <th mat-header-cell *matHeaderCellDef> Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                    </ng-container>
+
+                    <!-- Weight Column -->
+                    <ng-container matColumnDef="weight">
+                        <th mat-header-cell *matHeaderCellDef> Weight </th>
+                        <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                    </ng-container>
+
+                    <!-- Symbol Column -->
+                    <ng-container matColumnDef="symbol">
+                        <th mat-header-cell *matHeaderCellDef> Symbol </th>
+                        <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns2"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+
+                    <!-- Row shown when there is no matching data. -->
+                    <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

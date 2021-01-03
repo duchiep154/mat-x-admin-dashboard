@@ -1,0 +1,22 @@
+.main-wrapper {
+    padding: 10px;
+    .product-table{
+        width: 100%;
+        .active {
+            background: rgb(66 133 244 / 22%);
+            color: #4285f4;
+            pointer-events: none;
+        }
+        .inactive{
+            background: rgb(244 74 85 / 21%);
+            color: #f44a55;
+            pointer-events: none;
+        }
+        
+    }
+
+    .compStyle{
+        display: block;
+        margin-bottom: 10px;
+    }
+}

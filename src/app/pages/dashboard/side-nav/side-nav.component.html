@@ -1,0 +1,42 @@
+<div class="nav" [class.collapse]="sideNavClose">
+    <div class="search-box" *ngIf="mobileMode">
+        <mat-icon class="search-icon">search</mat-icon>
+        <input type="text" placeholder="Search.." class="bg-card foreground" />
+    </div>
+    <mat-divider *ngIf="mobileMode"></mat-divider>
+
+
+    <mat-accordion multi>
+
+        <ng-container *ngFor="let item of nav">
+
+            <mat-expansion-panel color="primary" (click)="openSideNav()" *ngIf="item.items">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-icon class="secondary">{{item.icon}}</mat-icon>
+                        <span class="navText">
+                            {{item.title}}
+                        </span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+                <ng-container *ngIf="item.items!=null">
+                    <mat-divider></mat-divider>
+                    <mat-nav-list>
+                        <mat-list-item *ngFor="let childItem of item.items" [routerLink]="childItem.link"
+                            routerLinkActive>
+                            <mat-icon>keyboard_arrow_right</mat-icon> {{childItem.title}}
+                        </mat-list-item>
+                    </mat-nav-list>
+                </ng-container>
+            </mat-expansion-panel>
+            <button class="navLink" mat-button *ngIf="!item.items" (click)="openSideNav()" [routerLink]="item.link">
+                <mat-icon class="secondary">{{item.icon}}</mat-icon>
+                <span class="navText">
+                    {{item.title}}
+                </span>
+            </button>
+            <mat-divider></mat-divider>
+        </ng-container>
+    </mat-accordion>
+</div>

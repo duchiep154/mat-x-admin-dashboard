@@ -1,0 +1,12 @@
+<div class="chart-header">
+    <div class="item" *ngFor="let item of chartInputData">
+        <i [ngStyle]="{'background-color':item.color}"></i>
+        <span>{{item.label}}</span>
+    </div>
+</div>
+<div class="block">
+
+    <canvas baseChart height="220" [datasets]="chartInputData" [labels]="lineChartLabels" [options]="lineChartOptions"
+        [colors]="lineChartColors" [chartType]="lineChartType">
+    </canvas>
+</div>

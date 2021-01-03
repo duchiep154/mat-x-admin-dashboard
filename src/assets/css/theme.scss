@@ -1,0 +1,79 @@
+@mixin component-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  // Foregrounds
+  .foreground {
+    color: mat-color($foreground, text);
+  }
+  .foreground-20 {
+    color: mat-color($foreground, text, 0.2);
+  }
+  .primary {
+    color: mat-color($primary, 500);
+  }
+  .accent {
+    color: mat-color($accent);
+  }
+  a {
+    color: mat-color($primary, 500);
+  }
+  .color-red {
+    color: #fe3451;
+  }
+  .bg-red {
+    color: #fe3451;
+  }
+  .color-green {
+    color: #02be6e;
+  }
+  .bg-green {
+    background: #02be6e;
+  }
+
+  // Backgrounds
+  .background {
+    background: mat-color($background, background);
+  }
+  .background-20 {
+    background: mat-color($background, background, 0.1);
+  }
+  .bg-primary {
+    background: mat-color($primary, 500);
+  }
+  .bg-primary-15 {
+    background: mat-color($primary, 500, 0.15);
+  }
+
+  .bg-accent {
+    background: mat-color($accent);
+  }
+  .bg-accent-15 {
+    background: mat-color($accent, 500, 0.15);
+  }
+  .bg-app {
+    background: mat-color($background, app-bar);
+  }
+  .bg-card {
+    background: mat-color($background, card);
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    //   border: 1px solid green;
+    -webkit-text-fill-color: mat-color($foreground, text);
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+  // Utilities
+}

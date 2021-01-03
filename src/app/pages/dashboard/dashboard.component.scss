@@ -1,0 +1,89 @@
+
+.dashboard-wrapper {
+   .row{
+       .overlay{
+            position: fixed;
+            background: rgba(0, 0, 0, 0.315);
+            backdrop-filter: blur(1px);
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            opacity: 0;
+            visibility: hidden;
+            transition: .5s ease all;
+            &.show{
+                opacity: 1;
+                visibility: visible;
+            }
+       }
+       .panel{
+           height: calc(100vh - 64px);
+           &.left{
+               width: 250px;
+               transition: .5s ease-in-out all;
+            }
+            &.right{
+                width: calc(100% - 250px);
+                padding: 25px 15px 0 15px;
+                transition: .5s ease-in-out all;
+           }
+       }
+   }
+   &.sideNavClose{
+       .row{
+            .panel{
+                &.left{
+                    width: 55px;
+                    overflow: hidden;
+                }
+                &.right{
+                    width: calc(100% - 55px);
+                }
+            }
+       }
+   }
+
+   @media(max-width: 991px){
+    .row{
+        .panel{
+            &.left{
+            }
+            &.right{
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+        }
+    }
+   }
+   @media(max-width: 768px){
+    .row{
+        .panel{
+            &.left{
+                width: 250px !important;
+                height: calc(100vh - 56px);
+                position: fixed;
+                z-index: 2;
+                top: 56px;
+            }
+            &.right{
+                width: 100% !important;
+            }
+        }
+    }
+    &.sideNavClose{
+        .row{
+             .panel{
+                &.left{
+                    transform: translateX(-100%);
+                }
+                &.right{
+                }
+             }
+        }
+    }
+
+   }
+    
+}

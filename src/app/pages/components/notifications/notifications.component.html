@@ -1,0 +1,137 @@
+<div class="notification-wrapper">
+    <header>
+        <h1>Notifications
+            <small>Notification Styles</small>
+        </h1>
+    </header>
+    <div class="content">
+        <div class="row">
+            <div class="col-12">
+                <mat-card class="card bg-app no-shadow">
+                    <div class="card-header">
+                        <h2>
+                            Colored Notifications
+                        </h2>
+                    </div>
+                    <mat-card-content class="snack-bar-fields">
+                        <div class="row">
+                            <div class="col-3 md-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Message</mat-label>
+                                    <input matInput value="New Notification!" #message>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-3 md-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Action</mat-label>
+                                    <input matInput value="Close" #action>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-3 md-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Horizontal position</mat-label>
+                                    <mat-select [(value)]="horizontalPosition">
+                                        <mat-option value="start">Start</mat-option>
+                                        <mat-option value="center">Center</mat-option>
+                                        <mat-option value="end">End</mat-option>
+                                        <mat-option value="left">Left</mat-option>
+                                        <mat-option value="right">Right</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-3 md-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Vertical position</mat-label>
+                                    <mat-select [(value)]="verticalPosition">
+                                        <mat-option value="top">Top</mat-option>
+                                        <mat-option value="bottom">Bottom</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <button mat-flat-button class="bg-green"
+                                (click)="openCustomSnackBar(message.value, action.value, 'success')">Success</button>
+                            <button mat-flat-button color="accent"
+                                (click)="openCustomSnackBar(message.value, action.value, 'info')">Info</button>
+                            <button mat-flat-button color="warn"
+                                (click)="openCustomSnackBar(message.value, action.value,'error')">Error</button>
+                        </div>
+
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <mat-card class="card bg-app no-shadow">
+                    <div class="card-header">
+                        <h2>
+                            Material Notifications
+                        </h2>
+                    </div>
+                    <mat-card-content class="snack-bar-fields">
+                        <div class="row">
+                            <div class="col-3 md-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Message</mat-label>
+                                    <input matInput value="Disco party!" #message2>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-3 md-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Action</mat-label>
+                                    <input matInput value="Dance" #action2>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-3 md-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Horizontal position</mat-label>
+                                    <mat-select [(value)]="horizontalPosition">
+                                        <mat-option value="start">Start</mat-option>
+                                        <mat-option value="center">Center</mat-option>
+                                        <mat-option value="end">End</mat-option>
+                                        <mat-option value="left">Left</mat-option>
+                                        <mat-option value="right">Right</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-3 md-6">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Vertical position</mat-label>
+                                    <mat-select [(value)]="verticalPosition">
+                                        <mat-option value="top">Top</mat-option>
+                                        <mat-option value="bottom">Bottom</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <button mat-stroked-button color="primary"
+                        (click)="openSnackBar(message2.value, action2.value)">
+                            Show snack-bar
+                        </button>
+
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <mat-card class="card bg-app no-shadow">
+                    <div class="card-header">
+                        <h2>
+                            Models
+                        </h2>
+                    </div>
+                    <mat-card-content class="button-group">
+                        <button mat-flat-button color="primary" (click)="openModel('alert')">Alert Model</button>
+                        <button mat-flat-button color="accent"  (click)="openModel('confirmation')">Confimation Model</button>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

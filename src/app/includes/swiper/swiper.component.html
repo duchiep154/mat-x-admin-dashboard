@@ -1,0 +1,20 @@
+<!-- Slider main container -->
+<div class="swiper-container" [id]="id">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <ng-content></ng-content>
+        <!-- <div class="swiper-slide" *ngFor="let item of slides">
+          <img [src]="item" alt="">
+        </div> -->
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+  
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev primary"></div>
+    <div class="swiper-button-next primary"></div>
+  
+    <!-- If we need scrollbar -->
+    <div class="swiper-scrollbar"></div>
+  </div>

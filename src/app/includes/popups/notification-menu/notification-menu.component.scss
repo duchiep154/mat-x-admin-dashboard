@@ -1,0 +1,57 @@
+::ng-deep{
+    .menu.mat-menu-panel {
+        min-width: 270px;
+        max-width: 370px;
+        .mat-list-item{
+            height: auto;
+            .mat-list-item-content{
+                align-items: center;
+                padding: 10px;
+                .left-img{
+                    min-width: 50px;
+                    margin-right: 15px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    img{
+                        border-radius: 50%;
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+                .text{
+                    margin-right: 1.5rem;
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    small{
+                        display: block;
+                        opacity: .7;
+                        font-size: 0.9em;
+                        font-weight: 400;
+                    }
+                }
+                .mat-icon{
+                    opacity: .5;
+                    margin-left: auto;
+                }
+            }
+        }
+        .mat-stroked-button{
+            width: 90%;
+            margin: 10px auto 2px;
+            display: block;
+            font-weight: 400;
+        }
+    }
+
+    @media(max-width: 767px){
+        .menu.mat-menu-panel {
+            min-width: 180px;
+            max-width: 80%;
+            &.notification-menu{
+                left: 15px;
+                position: relative;
+            }
+        }
+    }
+}

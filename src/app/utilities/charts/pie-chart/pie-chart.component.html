@@ -1,0 +1,11 @@
+<div class="chart-header">
+    <div class="item" *ngFor="let item of chartInputData">
+        <i [ngStyle]="{'background-color':item.color}"></i>
+        <span>{{item.label}}</span>
+    </div>
+</div>
+<div class="block">
+    <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType"
+        [options]="doughnutChartOptions" [colors]="doughnutChartColors">
+    </canvas>
+</div>

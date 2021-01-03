@@ -1,0 +1,8 @@
+<div class="prompt-container">
+    <h1 mat-dialog-title>{{data.title}}</h1>
+    <p>{{data.text}}</p>
+    <div mat-dialog-actions>
+        <button mat-stroked-button color="warn" *ngIf="data?.type === 'confirmation'" [mat-dialog-close]="true">Ok</button>
+        <button mat-stroked-button class="light" (click)="onNoClick()">Close</button>
+    </div>
+</div>

@@ -1,0 +1,183 @@
+@mixin utility-mixin($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+
+    /*
+3.) Global Links, Utilities & Buttons
+-------------------------------------*/
+    * {
+        box-sizing: border-box;
+    }
+    a {
+        transition: 0.3s ease all;
+        text-decoration: none;
+    }
+
+    .mat-stroked-button:not([disabled]) {
+        border-color: inherit;
+    }
+
+    /*
+4.) Global Sprite Icon Style
+-------------------------------------*/
+
+    /*
+5.) Global Utilities
+-------------------------------------*/
+    img {
+        max-width: 100%;
+    }
+    .opacity {
+        opacity: 0.8;
+    }
+    .opacity-50 {
+        opacity: 0.5;
+    }
+    .rounded {
+        border-radius: 4px;
+    }
+    figure {
+        padding: 0;
+        margin: 0;
+    }
+    .no-scroll {
+        overflow: hidden;
+        height: 100%;
+    }
+    .spacer {
+        flex: 1 1 auto;
+    }
+    .flex {
+        display: flex;
+    }
+    .shadow {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    .no-shadow {
+        box-shadow: 0 0 transparent !important;
+    }
+    .radius,
+    .rounded {
+        border-radius: 5px;
+    }
+    .outline {
+        border: 1px solid mat-color($foreground, slider-off);
+    }
+    .outline-top {
+        border-top: 1px solid mat-color($foreground, slider-off);
+    }
+
+    /* hide scrolling in apple devices */
+
+    html.hideScroll {
+        overflow: hidden;
+        height: 100%;
+        position: relative;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .hideScroll body {
+        overflow: hidden;
+        height: 100%;
+        position: relative;
+    }
+
+    .hiding {
+        -webkit-animation: 0.5s ease-in-out fadeOut;
+        animation: 0.5s ease-in-out fadeOut;
+    }
+
+    .showing {
+        opacity: 1;
+        -webkit-animation: 0.5s ease-in-out fadeIn;
+        animation: 0.5s ease-in-out fadeIn;
+    }
+
+    .relative {
+        position: relative;
+    }
+    button {
+        min-height: 4rem;
+    }
+
+    button .mat-spinner {
+        display: inline-block;
+        top: -3px;
+    }
+    .full-width,
+    .full-width img {
+        width: 100%;
+    }
+
+    .full-height {
+        min-height: 100vh;
+    }
+
+    .pointer-events-none {
+        pointer-events: none;
+    }
+    .pointer {
+        cursor: pointer;
+    }
+
+    .strong,
+    .bold {
+        font-weight: 600;
+    }
+
+    
+    .mh-100{
+        min-height: 100%;
+    }
+
+    .flex-wrap {
+        flex-wrap: wrap;
+    }
+
+    /* Custom Scrollbar*/
+
+    .custom-scrollbar {
+        overflow: auto;
+        // padding-bottom: 8px;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 7px;
+        height: 7px;
+        left: -10px;
+        position: relative;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: mat-color($background, status-bar, 0.5);
+        border-radius: 5px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: mat-color($background, card, 0.1);
+        border-radius: 0;
+    }
+
+    .mat-expansion-indicator::after {
+        color: mat-color($primary, 200);
+        // color: mat-color($accent, 200);
+    }
+
+    @media (max-width: 767px) {
+        .custom-scrollbar {
+            -webkit-overflow-scrolling: touch;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb,
+        .custom-scrollbar::-webkit-scrollbar-track {
+            display: none;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            position: static;
+        }
+    }
+} // @mixin utility-mixin($theme) Ends
